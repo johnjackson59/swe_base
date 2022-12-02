@@ -1,0 +1,24 @@
+<h1>ABC Fuel Company Home Page</h1>
+
+{% if user.is_authenticated %}
+    <p>Hello {{user.username}}</p>
+    <p>
+        <a href="{% url 'sd_app:profile' %}">Profile</a>
+    </br>
+    </br>
+        <a href="{% url 'sd_app:buy' %}">Fuel Quote Form</a>
+    </br>
+    </br>
+        <a href="{% url 'sd_app:purchase_history' %}">Fuel Quote History</a>
+    <br/>
+    <br/>
+        <a href="{% url 'logout' %}">Logout</a>
+    </p>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+</br>
+</br>
+</br>
+    <a href="{% url 'sd_app:register' %}">Register</a>
+{% endif %}
+

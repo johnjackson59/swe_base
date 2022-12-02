@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+    {% extends "sd_app/base.html" %}
+
+    {% block content %}
+    <style>
+        table {
+            border-collapse: collapse;            
+        }
+        
+    </style>
+<body>
+    <h3>{{ user.username }}</h3>
+    <h2>Fuel Quote History</h2>
+
+    <table border="1">
+        <tr>
+            <td>Gallons Requested </td>
+            <td>Delivery Date </td>
+            <td>Suggested Price </td>
+            <td>Total Amount</td>
+            <td>Address 1</td>
+            <td>Address 2</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Zipcode</td>
+
+        </tr>
+        {% for item in purchases %}
+        <tr>
+            <td>{{ item.gallons_requested }}</td>
+            <td>{{ item.delivery_date }}</td>
+            <td>{{ item.suggested_price }}</td>
+            <td> $ {{ item.total_amount_due }}</td>
+            <td> {{ item.address_1 }}</td>
+            <td> {{ item.address_2 }}</td>
+            <td> {{ item.city }}</td>
+            <td> {{ item.state }}</td>
+            <td> {{ item.zipcode }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+    {% endblock content %}
+
+</html>
