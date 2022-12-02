@@ -1,6 +1,3 @@
-# COSC-4353-Team-11
-Web app project for Raj Singh's Software Design summer class
-
 Steps to clone and run locally:
 
 CLONE AND CHECKOUT
